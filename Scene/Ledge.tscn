@@ -1,0 +1,19 @@
+[gd_scene format=2]
+
+[node name="Ledge" type="CSGCombiner"]
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+width = 3.0
+height = 0.5
+depth = 10.0
+
+[node name="CSGBox2" type="CSGBox" parent="CSGBox"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4, 0, -2 )
+width = 3.0
+height = 0.5
+depth = 10.0
+
+[node name="CSGPolygon" type="CSGPolygon" parent="CSGBox"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -9, -1, 0 )
+polygon = PoolVector2Array( -0.283504, -0.713867, -0.216142, 1.13032, 5.08025, -0.621389 )

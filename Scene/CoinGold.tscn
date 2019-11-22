@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/CoinGold.gd" type="Script" id=1]
 [ext_resource path="res://Models/GLTF format/gold.material" type="Material" id=2]
@@ -38,6 +38,10 @@ height = 0.101822
 [sub_resource type="Animation" id=3]
 resource_name = "Spin"
 loop = true
+
+[sub_resource type="Animation" id=4]
+resource_name = "spin"
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rotation_degrees")
 tracks/0/interp = 1
@@ -48,11 +52,11 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector3( 0, 180, 0 ), Vector3( 0, 180, 0 ) ]
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 180, 0 ) ]
 }
 
 [node name="CoinGold" type="Area"]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0 )
+transform = Transform( -0.159078, 0, 0.987266, 0, 1, 0, -0.987266, 0, -0.159078, 0, 0, 0 )
 collision_layer = 4
 collision_mask = 2
 script = ExtResource( 1 )
@@ -70,3 +74,5 @@ shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Spin = SubResource( 3 )
+anims/spin = SubResource( 4 )
+[connection signal="body_entered" from="." to="." method="_on_CoinGold_body_entered"]

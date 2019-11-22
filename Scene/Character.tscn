@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Character.gd" type="Script" id=1]
 
@@ -15,6 +15,9 @@ radius = 0.5
 [sub_resource type="PrismMesh" id=4]
 size = Vector3( 0.5, 0.5, 0.1 )
 
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 0.0509804, 0.0509804, 0.0470588, 1 )
+
 [node name="Characer" type="KinematicBody"]
 collision_layer = 2
 script = ExtResource( 1 )
@@ -29,7 +32,10 @@ shape = SubResource( 3 )
 [node name="MeshInstance2" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.115595, -0.52183 )
 mesh = SubResource( 4 )
-material/0 = null
+material/0 = SubResource( 5 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.933589, 0.358345, 0, -0.358345, 0.933589, 0, 1.77522, 3.10901 )
+transform = Transform( 1, 0, 0, 0, 0.866777, 0.498696, 0, -0.498696, 0.866777, 0, 2.5459, 2.49244 )
+
+[node name="Position3D" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0740333, -0.72487 )
